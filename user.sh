@@ -57,6 +57,8 @@ VALIDATE $? "Installing npm"
 cp $SCRIPT_DIR/user.service /etc/systemd/system/user.service &>>$LOGS_FILE
 VALIDATE $? "Creating service file"
 
+systemctl unmask user.service
+
 systemctl daemon-reload
 
 systemctl enable user &>>$LOGS_FILE
