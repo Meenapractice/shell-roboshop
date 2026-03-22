@@ -8,7 +8,7 @@ G='\e[32m'
 Y='\e[33m'
 N='\e[0m'
 SCRIPT_DIR=$PWD
-MONGO_DB_HOST=mongodb.devopstest.fun
+MONGODB_HOST=mongodb.devopstest.fun
 
 mkdir -p $LOGS_FOLDER
 
@@ -78,7 +78,7 @@ VALIDATE $? "Installing client mongodb"
 
 INDEX=$(mongosh --host $MONGODB_HOST --quiet  --eval 'db.getMongo().getDBNames().indexOf("catalogue")')
 
-if [ "$INDEX" -le 0 ]; then
+if [ $INDEX -le 0 ]; then
     mongosh --host $MONGODB_HOST </app/db/master-data.js
     VALIDATE $? "Loading products"
 else
