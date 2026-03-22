@@ -43,7 +43,7 @@ aws route53 change-resource-record-sets \
 "Comment" : "Updating Record",
 "Changes" : [
     {
-    "Actions" : "UPSERT",
+    "Action" : "UPSERT",
     "ResourceRecordSet": {
        "Name" : "'$RECORD_NAME'",
        "Type" : "A",
