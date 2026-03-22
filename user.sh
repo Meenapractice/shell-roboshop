@@ -54,11 +54,11 @@ cd /app
 npm install &>>$LOGS_FILE
 VALIDATE $? "Installing npm"
 
-cp $SCRIPT_DIR/myapp.service /etc/systemd/system/myapp.service &>>$LOGS_FILE
+cp $SCRIPT_DIR/user.service /etc/systemd/system/user.service &>>$LOGS_FILE
 VALIDATE $? "Creating service file"
 
 systemctl daemon-reload
 
-systemctl enable myapp &>>$LOGS_FILE
-systemctl start myapp 
-VALIDATE $? "Starting the myapp"
+systemctl enable user &>>$LOGS_FILE
+systemctl start user 
+VALIDATE $? "Starting the user"
