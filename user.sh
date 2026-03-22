@@ -54,7 +54,10 @@ cd /app
 npm install &>>$LOGS_FILE
 VALIDATE $? "Installing npm"
 
-echo $SCRIPT_DIR
+if [ ! -s "$SCRIPT_DIR/user.service" ]; then
+    echo "Service file missing or empty"
+    exit 1
+fi
 
 cp $SCRIPT_DIR/user.service /etc/systemd/system/user.service &>>$LOGS_FILE
 VALIDATE $? "Creating service file"
