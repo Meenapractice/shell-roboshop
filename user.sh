@@ -54,10 +54,8 @@ cd /app
 npm install &>>$LOGS_FILE
 VALIDATE $? "Installing npm"
 
-cp $SCRIPT_DIR/user.service /etc/systemd/system/user.service &>>$LOGS_FILE
+cp $SCRIPT_DIR/myapp.service /etc/systemd/system/myapp.service &>>$LOGS_FILE
 VALIDATE $? "Creating service file"
-
-systemctl unmask user.service
 
 systemctl daemon-reload
 
