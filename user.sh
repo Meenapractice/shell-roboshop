@@ -59,6 +59,6 @@ VALIDATE $? "Creating service file"
 
 systemctl daemon-reload
 
-systemctl enable user &>>$LOGS_FILE
-systemctl start user 
-VALIDATE $? "Starting the user"
+systemctl enable myapp &>>$LOGS_FILE
+systemctl start myapp 
+VALIDATE $? "Starting the myapp"
