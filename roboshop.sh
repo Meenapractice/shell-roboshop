@@ -23,7 +23,7 @@ if [ $instance == "frontend" ]; then
       --output text
 )
 
-RECORD_NAME=$DOMAIN_NAME
+RECORD_NAME="$DOMAIN_NAME"
 else
   IP=$(aws ec2 describe-instances \
      --instance-ids $INSTANCE_ID \
@@ -31,7 +31,7 @@ else
      --output query
   )
 
-  RECORD_NAME=$instance.$DOMAIN_NAME
+  RECORD_NAME="$instance.$DOMAIN_NAME"
   
 fi
   echo "IP Address is $IP"
